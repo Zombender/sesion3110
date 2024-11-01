@@ -1,5 +1,7 @@
 package org.example.models;
 
+import javax.lang.model.element.NestingKind;
+
 public class Product {
     private String name;
     private double price;
@@ -38,8 +40,12 @@ public class Product {
         this.stock = stock;
     }
 
-    public void updateStock(int stock){
+    public void updateStock(int stock, String type){
+        if (type.length()!=1) return;
         if (stock <=0) return;
+        if (type.equalsIgnoreCase("i")){
+            return;
+        }
         setStock(getStock()+stock);
         //this.stock += stock
     }
