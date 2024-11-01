@@ -34,10 +34,12 @@ public class Person {
         this.age = age;
     }
 
-    public void printInformation(){
-        System.out.printf("Nombre: %s\n",this.name);
-        System.out.printf("Edad: %d\n",this.age);
-        System.out.printf("Genero: %s\n",this.gender);
+    public String printInformation(){
+        String format = "";
+        format += String.format("Nombre: %s\n",this.name);
+        format += String.format("Edad: %d\n",this.age);
+        format += String.format("Genero: %s\n",this.gender);
+        return format;
     }
 
 }
